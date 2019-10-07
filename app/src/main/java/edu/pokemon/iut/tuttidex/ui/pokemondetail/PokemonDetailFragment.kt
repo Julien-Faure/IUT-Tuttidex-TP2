@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.transition.TransitionInflater
 import edu.pokemon.iut.tuttidex.R
+import edu.pokemon.iut.tuttidex.common.image.loadImageWithOutTransition
 import edu.pokemon.iut.tuttidex.databinding.FragmentPokemonDetailBinding
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
@@ -56,6 +57,7 @@ class PokemonDetailFragment : Fragment() {
         viewModel.image.observe(this, Observer { image ->
             //TODO 16) Lorsque l'url de l'image du pokemon est disponible la donnée sera mise à disposition ici
             // Utiliser la pour charger l'image dans l'ImageView du layout (utiliser loadImageWithOutTransition)
+            loadImageWithOutTransition(binding.imagePoke,viewModel.image.value)
         })
         viewModel.types.observe(this, Observer { types ->
             //TODO 17) Plutôt que de n'afficher qu'un seul type essayer de trouver une solution pour tous les afficher cf TODO 18
