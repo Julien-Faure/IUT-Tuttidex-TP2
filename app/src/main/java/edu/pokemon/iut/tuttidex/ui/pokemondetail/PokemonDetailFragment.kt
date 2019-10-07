@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -14,6 +15,8 @@ import edu.pokemon.iut.tuttidex.common.image.loadImageWithOutTransition
 import edu.pokemon.iut.tuttidex.databinding.FragmentPokemonDetailBinding
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
+
+
 
 
 class PokemonDetailFragment : Fragment() {
@@ -72,6 +75,11 @@ class PokemonDetailFragment : Fragment() {
     @SuppressLint("InflateParams")
     private fun loadTypes(types: List<String>) {
         //TODO 18) coder ici le todo 17, petit indice un LinearLayout peut vous aider
+        types.forEach{
+            val newType = TextView(ContextThemeWrapper(context, R.style.PokemonDetailTypeList))
+            newType.text = it
+            binding.typeList.addView(newType)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

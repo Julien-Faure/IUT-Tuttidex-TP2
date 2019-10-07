@@ -73,16 +73,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/types" />
-
-            <TextView
-                android:id="@+id/valueType"
-                style="@style/PokemonDetailRightTextView"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/typeList"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:text="@{pokemonDetailViewModel.types[0]}"
-                tools:text="fire" />
+                android:orientation="vertical">
+            </LinearLayout>
         </LinearLayout>
 
         <!--TODO 9) Afficher un "label" pour indiquer que la donnée est l'exp de base du pokemon -->

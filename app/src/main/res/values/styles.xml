@@ -60,4 +60,9 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
+    <!--PokemonDetailId-->
+    <style name="PokemonDetailTypeList" parent="PokemonDetailRightTextView">
+        <item name="android:gravity">end</item>
+    </style>
+
 </resources>
