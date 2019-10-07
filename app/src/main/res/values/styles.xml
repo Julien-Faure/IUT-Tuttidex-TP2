@@ -30,4 +30,34 @@
         <item name="android:background">@color/color_surface</item>
     </style>
 
+    <!--PokemonDetailLinearLayouts-->
+    <style name="PokemonDetailStat">
+        <item name="android:background">@android:drawable/dialog_holo_light_frame</item>
+    </style>
+
+    <!--PokemonDetailAttributNames-->
+    <style name="PokemonDetailLeftTextView">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--PokemonDetailAttributValues-->
+    <style name="PokemonDetailRightTextView">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!--PokemonDetailName-->
+    <style name="PokemonDetailName">
+        <item name="android:textSize">27sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!--PokemonDetailId-->
+    <style name="PokemonDetailId">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
 </resources>

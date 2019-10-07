@@ -19,59 +19,68 @@
 
         <!--TODO 6) Afficher le nom du pokemon -->
 
-        <TextView
-            android:id="@+id/idPokemon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="318dp"
-            android:layout_marginTop="85dp"
-            android:layout_marginEnd="34dp"
-            android:text="@{String.format(@string/number, pokemonDetailViewModel.number)}"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="no 1" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="302dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="579dp"
-            android:text="@{pokemonDetailViewModel.name}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="NAME" />
-
 
         <!--TODO 7) Afficher un "label" pour indiquer que la donnée est le type du pokemon -->
         <!--TODO 8) Afficher le premier type du pokemon -->
+
+
+        <LinearLayout
+            style="@style/PokemonDetailStat"
+            android:layout_width="0dp"
+            android:layout_height="179dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayoutType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePoke"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/PokemonDetailName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{pokemonDetailViewModel.name}"
+                tools:text="NAME" />
+
+            <TextView
+                android:id="@+id/idPokemon"
+                style="@style/PokemonDetailId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="@{String.format(@string/number, pokemonDetailViewModel.number)}"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="no 1" />
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/linearLayoutType"
+            style="@style/PokemonDetailStat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="240dp"
-            android:layout_marginStart="@dimen/little_margin"
-            android:layout_marginEnd="@dimen/little_margin"
             android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/labelType"
+                style="@style/PokemonDetailLeftTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/types" />
 
             <TextView
                 android:id="@+id/valueType"
-                android:layout_width="wrap_content"
+                style="@style/PokemonDetailRightTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@{pokemonDetailViewModel.types[0]}"
                 tools:text="fire" />
         </LinearLayout>
@@ -80,81 +89,90 @@
         <!--TODO 10) Afficher l'exp de base du pokemon -->
         <LinearLayout
             android:id="@+id/linearLayoutEXP"
+            style="@style/PokemonDetailStat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/little_margin"
-            android:layout_marginEnd="@dimen/little_margin"
             android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayoutType">
 
             <TextView
                 android:id="@+id/labelEXP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/base_exp" />
+                android:text="@string/base_exp"
+                style="@style/PokemonDetailLeftTextView"/>
 
             <TextView
                 android:id="@+id/valueEXP"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@{String.format(@string/exp, pokemonDetailViewModel.baseExp)}"
-                tools:text="120exp" />
+                tools:text="120exp"
+                style="@style/PokemonDetailRightTextView"/>
         </LinearLayout>
 
         <!--TODO 11) Afficher un "label" pour indiquer que la donnée est la taille du pokemon -->
         <!--TODO 12) Afficher la taille du pokemon -->
         <LinearLayout
             android:id="@+id/linearLayoutHeight"
+            style="@style/PokemonDetailStat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/little_margin"
-            android:layout_marginEnd="@dimen/little_margin"
             android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayoutEXP">
 
             <TextView
                 android:id="@+id/labelHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ht" />
+                android:text="@string/ht"
+                style="@style/PokemonDetailLeftTextView"/>
 
             <TextView
                 android:id="@+id/valueHeight"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@{String.format(@string/height, pokemonDetailViewModel.height)}"
-                tools:text="130cm" />
+                tools:text="130cm"
+                style="@style/PokemonDetailRightTextView"/>
         </LinearLayout>
 
         <!--TODO 13) Afficher un "label" pour indiquer que la donnée est le poids du pokemon -->
         <!--TODO 14) Afficher le poids du pokemon -->
         <LinearLayout
             android:id="@+id/linearLayoutWeight"
+            style="@style/PokemonDetailStat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/little_margin"
-            android:layout_marginEnd="@dimen/little_margin"
             android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayoutHeight">
 
             <TextView
                 android:id="@+id/labelWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/wt" />
+                android:text="@string/wt"
+                style="@style/PokemonDetailLeftTextView"/>
 
             <TextView
                 android:id="@+id/valueWeight"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@{String.format(@string/weight, pokemonDetailViewModel.weight)}"
-                tools:text="30kg" />
+                tools:text="30kg"
+                style="@style/PokemonDetailRightTextView"/>
         </LinearLayout>
 
 
@@ -162,19 +180,18 @@
         <!--TODO 15) Afficher l'image du pokemon -->
         <ImageView
             android:id="@+id/imagePoke"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="46dp"
+            style="@style/PokemonDetailStat"
+            android:layout_width="173dp"
+            android:layout_height="180dp"
             android:layout_marginTop="47dp"
-            android:layout_marginEnd="158dp"
             android:layout_marginBottom="85dp"
+            android:contentDescription="@string/pokemon_image"
             app:imageUrl="@{pokemonDetailViewModel.image}"
             app:layout_constraintBottom_toTopOf="@+id/linearLayoutType"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.263"
             app:srcCompat="@drawable/ic_pokeball" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

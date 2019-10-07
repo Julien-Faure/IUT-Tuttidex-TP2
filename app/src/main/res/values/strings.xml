@@ -71,5 +71,7 @@
     <string name="tuttidex_logo">Tuttidex logo</string>
     <string name="preview_pokemon">Pokemon preview</string>
     <string name="type_pokemon_color">Type pokemon color</string>
+    
+    <string name="pokemon_image">Image of the pokemon</string>
 
 </resources>
